@@ -7,6 +7,15 @@
   <title>Document</title>
 
   <script>
+    function setColor(color){
+      var alist = document.querySelectorAll('a');
+      var i = 0;
+      while(i < alist.length){
+        alist[i].style.color = color;
+        i = i + 1;
+      }
+
+    }
     function nightDayHandler(self)
     {
       var target = document.querySelector('body');
@@ -14,33 +23,21 @@
       target.style.backgroundColor = 'black';
       target.style.color = 'white';
       self.value = 'day';
+      
+      setColor('powderblue');
 
-      var alist = document.querySelectorAll('a');
-      var i = 0;
-      while(i < alist.length){
-        alist[i].style.color = 'powderblue';
-        i = i + 1;
-      }
     } else {
-      target.style.backgroundColor = 'white';
+      target.style.backgroundColor = 'white'; 
       target.style.color = 'black';
       this.value = 'night';
 
-      var alist = document.querySelectorAll('a');
-      var i = 0;
-      while(i < alist.length){
-        alist[i].style.color = 'blue';
-        i = i + 1;
-      }
+      setColor('blue');
     }
   }
   </script>
 </head>
 <body>
   <h1><a href="index.html">WEB</a></h1>
-  <input id="night_day" type="button" value="night" onclick="
-    nightDayHandler(this)
-  ">
   <input id="night_day" type="button" value="night" onclick="
     nightDayHandler(this)
   ">
